@@ -1,0 +1,102 @@
+{
+	"Disabled": [
+		false,
+		"bool"
+	],
+	"AllowAddAccounts": [
+		true,
+		"bool"
+	],
+	"AllowAutosaveInDrafts": [
+		false,
+		"bool"
+	],
+	"AllowChangeEmailSettings": [
+		true,
+		"bool"
+	],
+	"AllowFetchers": [
+		false,
+		"bool"
+	],
+	"AllowIdentities": [
+		true,
+		"bool"
+	],
+	"AllowFilters": [
+		false,
+		"bool"
+	],
+	"AllowForward": [
+		false,
+		"bool"
+	],
+	"AllowAutoresponder": [
+		false,
+		"bool"
+	],
+	"AllowInsertImage": [
+		true,
+		"bool"
+	],
+	"AllowThreads": [
+		true,
+		"bool"
+	],
+	"AutoSaveIntervalSeconds": [
+		60,
+		"int"
+	],
+	"DisplayInlineCss": [
+		false,
+		"bool"
+	],
+	"ImageUploadSizeLimit": [
+		0,
+		"int"
+	],
+	"MessageBodySizeLimit": [
+		25000,
+		"int"
+	],
+    "SieveGeneralPassword": [
+        "",
+        "string"
+    ],
+    "SieveFileName": [
+        "sieve",
+        "string"
+    ],
+    "SieveFiltersFolderCharset": [
+        "utf-8",
+        "string"
+    ],
+    "SieveHost": [
+        "127.0.0.1",
+        "string"
+    ],
+	"SievePort": [
+		2000,
+		"int"
+	],
+	"UseBodyStructuresForHasAttachmentsSearch": [
+		false,
+		"bool"
+	],
+	"UseDateFromHeaders": [
+		false,
+		"bool"
+	],
+    "XMailerValue": [
+        "AfterLogic webmail client",
+        "string"
+    ],
+    "ForwardedFlagName": [
+        "$Forwarded",
+        "string"
+    ],
+    "AllowNewUsersRegister": [
+        false,
+        "bool"
+    ]	
+}

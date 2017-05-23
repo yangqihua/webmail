@@ -1,0 +1,56 @@
+{
+	"AllowCapa": [
+		false,
+		"bool"
+	],
+	"AllowPostLogin": [
+		false,
+		"bool"
+	],
+	"CsrfTokenProtection": [
+		true,
+		"bool"
+	],
+	"CronTimeToRunSeconds": [
+		10800,
+		"int"
+	],
+	"CronTimeToKillSeconds": [
+		10800,
+		"int"
+	],
+	"CronTimeFile": [
+		".clear.dat",
+		"string"
+	],
+    "DateFormat": [
+        "DD\/MM\/YYYY",
+        "spec",
+        "EDateFormat"
+    ],
+    "DateFormatList": [
+		["DD/MM/YYYY", "MM/DD/YYYY", "DD Month YYYY"],
+		"array"
+	],
+	"Disabled": [
+		false,
+		"bool"
+	],
+	"GetAccountWithPassword": [
+		true,
+		"bool"
+	],
+    "Language": [
+        "English",
+        "string"
+    ],
+    "PostLoginErrorRedirectUrl": [
+        "./",
+        "string"
+    ],
+    "TimeFormat": [
+        "F24",
+        "spec",
+        "ETimeFormat"
+    ]
+}

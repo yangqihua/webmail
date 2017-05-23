@@ -1,0 +1,38 @@
+{
+	"Disabled": [
+		false,
+		"bool"
+	],
+	"ServerModuleName": [
+        "StandardLoginFormWebclient",
+        "string"
+    ],
+	"HashModuleName": [
+		"login",
+		"string"
+	],
+    "CustomLoginUrl": [
+		"",
+		"string"
+	],
+    "CustomLogoUrl": [
+		"",
+		"string"
+	],
+    "DemoLogin": [
+		"",
+		"string"
+	],
+    "DemoPassword": [
+		"",
+		"string"
+	],
+    "InfoText": [
+		"",
+		"string"
+	],
+    "LoginSignMeType": [
+		0,
+		"int"
+	]
+}

@@ -1,0 +1,10 @@
+.idea
+/node_modules
+/vendor/
+/data
+#/modules/
+/static/
+/composer.lock
+
+.htaccess
+robots.txt

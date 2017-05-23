@@ -1,0 +1,53 @@
+<div class="fields">
+	<div class="fieldset">
+		<div class="row" data-bind="visible: canBeUsedToAuthorize">
+			<div>
+				<span class="label"></span>
+				<label class="custom_checkbox" data-bind="css: {'checked': useToAuthorize}">
+					<span class="icon"></span>
+					<input type="checkbox" id="account_use_to_authorize" data-bind="checked: useToAuthorize" />
+				</label>
+				<label class="label" for="account_use_to_authorize" data-bind="i18n: {'key': '%MODULENAME%/LABEL_USE_TO_AUTHORIZE'}"></label>
+			</div>	
+		</div>
+		
+		<div class="row" data-bind="visible: !bAllowIdentities">
+			<span class="label" data-bind="i18n: {'key': '%MODULENAME%/LABEL_YOUR_NAME'}"></span>
+			<input class="value input" spellcheck="false" type="text" maxlength="65" data-bind="value: friendlyName, onEnter: save"/>
+		</div>
+
+        <div data-bind="visible: bAllowChangeEmailSettings">
+            <div class="row">
+                <span class="label required" data-bind="i18n: {'key': 'COREWEBCLIENT/LABEL_LOGIN'}"></span>
+                <input class="value input" spellcheck="false" type="text" maxlength="255" data-bind="value: incomingLogin, hasfocus: incLoginFocused, onEnter: save"/>
+            </div>
+            <div class="row">
+                <span class="label required" data-bind="i18n: {'key': 'COREWEBCLIENT/LABEL_PASSWORD'}"></span>
+                <input class="value input" spellcheck="false" type="password" maxlength="255" data-bind="value: incomingPassword, onEnter: save"/>
+            </div>
+			
+			<!-- ko template: {name: oServerPairPropertiesView.ViewTemplate, data: oServerPairPropertiesView} --><!-- /ko -->
+			
+			<div class="row"></div>
+		</div>
+
+		<div class="buttons" data-bind="visible: allowChangePassword" style="text-align: left;">
+			<span class="button" data-bind="i18n: {'key': 'COREWEBCLIENT/ACTION_CHANGE_PASSWORD'}, click: changePassword"></span>
+		</div>
+
+		<div data-bind="visible: canBeRemoved()">
+            <div class="row remove_account">
+				<span class="link" data-bind="i18n: {'key': 'COREWEBCLIENT/ACTION_REMOVE_ACCOUNT'}, click: remove, attr: {'id': 'selenium_settings_delete_account_' + email()}"></span>
+            </div>
+            <div class="hint">
+                <span data-bind="i18n: {'key': '%MODULENAME%/INFO_REMOVE_ACCOUNT'}"></span>
+            </div>
+        </div>
+
+    </div>
+	
+	<div class="buttons" data-bind="visible: bAllowChangeEmailSettings || !bAllowIdentities">
+		<span class="button" data-bind="i18n: {'key': 'COREWEBCLIENT/ACTION_SAVE'}, click: save, visible: !isSaving()"></span>
+		<span class="button" data-bind="i18n: {'key': 'COREWEBCLIENT/ACTION_SAVE_IN_PROGRESS'}, click: save, visible: isSaving()"></span>
+	</div>
+</div>

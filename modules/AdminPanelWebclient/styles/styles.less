@@ -1,0 +1,58 @@
+.AdminPanelLayout {
+	@import "settings.less";
+
+	.input.enlarged {
+		width: 360px;
+	}
+	
+	&.screen {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+	}
+	//.panels.settings .panel.navigation_panel .middle_bar {
+	//	padding-top: 0px;
+	//}
+	
+//	.panels.settings .panel.center_panel {
+//		width: 180px;
+	//}
+	
+	.items_list .item {
+		cursor: pointer;
+		
+		.user-select();
+
+		.icon {
+			display: inline-block;
+			display: none;
+			height: 19px;
+			margin-right: 4px;
+			vertical-align: middle;
+			width: 18px;
+		}
+		
+		&.selected {
+			cursor: default;
+		}
+		
+		&.heading {
+			cursor: default;
+			background: #fcfcfc;
+			color: #ccc;
+			text-transform: uppercase;
+		}
+	}
+	
+	.account_list .item.account {
+		padding: 11px 16px;
+		
+		.title {
+			float: left;
+			margin: 0;
+		}
+		.link {
+			float: right;
+		}
+	}
+}
