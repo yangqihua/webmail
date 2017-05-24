@@ -70,7 +70,7 @@ class Manager
 	}
 	
 	/**
-	 * 
+	 * 加载所有没有被disable的方法，并运行每个module->initialize()方法
 	 * @return string
 	 */
 	public function init()
@@ -93,7 +93,7 @@ class Manager
 				\array_unshift($aModulePath, $sTenantModulesPath);
 			}
 			$aModulesPath = array();
-			foreach ($aModulePath as $sModulesPath)
+			foreach ($aModulePath as $sModulesPath) //$sModulesPath就是modules目录
 			{
 				if (@\is_dir($sModulesPath))
 				{
@@ -103,6 +103,7 @@ class Manager
 						{
 							if (0 < \strlen($sFileItem) && '.' !== $sFileItem{0} && \preg_match('/^[a-zA-Z0-9\-]+$/', $sFileItem))
 							{
+							    // 将modules放到$aModulesPath['modules'所在目录]中
 								$aModulesPath[$sModulesPath][] = $sFileItem;
 							}
 						}
@@ -111,6 +112,7 @@ class Manager
 					}
 				}
 			}
+			//加载没有被disable掉的module
 			foreach ($aModulesPath as $aModulePath)
 			{
 				foreach ($aModulePath as $sModuleName)
@@ -131,6 +133,7 @@ class Manager
 					}
 				}
 			}
+			//运行每一个module的initialize()函数
 			foreach ($this->_aModules as $oModule)
 			{
 				if ($oModule instanceof \Aurora\System\Module\AbstractModule)

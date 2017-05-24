@@ -136,8 +136,12 @@ class Api
 			self::InitSalt();
 
 			self::$oManager = new \Aurora\System\Managers\GlobalManager();
+			//验证data/settings/config.json是否存在
 			self::$bIsValid = self::validateApi();
+
+			//运行manager的init(),初始化所有module->initialize()
 			self::GetModuleManager();
+
 			self::$aModuleDecorators = array();
 			
 			self::removeOldLogs();
@@ -1296,7 +1300,7 @@ class Api
 	}		
 
 	/**
-	 * 
+	 * 获取authToken的UserId
 	 * @return int
 	 */
 	public static function authorise()

@@ -77,6 +77,7 @@ class GlobalManager
 		$this->aManagers[$sKey] = $oManager;
 	}	
 	/**
+     * 获取data/settings/config.json的内容
 	 * @return \Aurora\System\Settings
 	 */
 	public function &GetSettings()
@@ -193,10 +194,11 @@ class GlobalManager
 		return $oCommandCreator;
 	}
 
-	/**
-	 * @param string $sManagerType
-	 * @param string $sForcedStorage = ''
-	 */
+    /**
+     * @param string $sManagerType
+     * @param string $sForcedStorage = ''
+     * @return mixed|null
+     */
 	public function GetByType($sManagerType, $sForcedStorage = '')
 	{
 		$oResult = null;

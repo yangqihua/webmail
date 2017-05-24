@@ -142,11 +142,12 @@ class Application
 		
 		return $aResult;
 	}
-	
-	/**
-	 * 
-	 * @param int $iIndex
-	 */
+
+    /**
+     *
+     * @param int $iIndex
+     * @return mixed|null
+     */
 	public static function GetPathItemByIndex($iIndex, $mDefaultValue = null)
 	{
 		$aPath = self::GetPaths();

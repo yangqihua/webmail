@@ -13,12 +13,14 @@ spl_autoload_register(function ($sClassName) {
 			'Aurora\\System'
 		)
 	);
+	//system目录下的类
 	foreach ($aClassesTree as $sFolder => $aClasses)
 	{
 		foreach ($aClasses as $sClass)
 		{
 			if (0 === strpos($sClassName, $sClass) && false !== strpos($sClassName, '\\'))
 			{
+			    //获取system目录下的类的路径
 				$sFileName = dirname(__DIR__) . '/' .$sFolder.'/'.str_replace('\\', '/', substr($sClassName, strlen($sClass) + 1)).'.php';
 				if (file_exists($sFileName))
 				{
@@ -28,6 +30,7 @@ spl_autoload_register(function ($sClassName) {
 		}
 	}
 
+	//modules下面的类，include_once相应modules下面的类
 	if (strpos($sClassName, 'Aurora\\Modules') !== false)
 	{
 		$sModuleClassName = substr($sClassName, strlen('Aurora\\Modules\\'));
