@@ -247,7 +247,7 @@ class Manager
 	}
 
     /**
-	 * 
+	 *
 	 * @return array
 	 */
 	public function getEvents() 
@@ -283,8 +283,8 @@ class Manager
 		}
         $this->_aSubscriptions[$sEvent][$iPriority] = $fCallback;
         \ksort($this->_aSubscriptions[$sEvent]);
-    }	
-	
+    }
+
     /**
      * Broadcasts an event
      *
@@ -292,10 +292,12 @@ class Manager
      *
      * The arguments parameter will be sent to all subscribers
      *
+     * @param $sModule
      * @param string $sEvent
      * @param array $aArguments
      * @param mixed $mResult
-     * @return boolean
+     * @param bool $bCountinue
+     * @return bool
      */
     public function broadcastEvent($sModule, $sEvent, &$aArguments = array(), &$mResult = null, &$bCountinue = true) 
 	{
@@ -308,6 +310,7 @@ class Manager
 				$this->_aSubscriptions[$sEvent]
 			);
         }
+        //有些subscribe了CreateAccount::before这样的event
 		$sEvent = $sModule . AbstractModule::$Delimiter . $sEvent;
 		if (isset($this->_aSubscriptions[$sEvent])) 
 		{
@@ -346,6 +349,7 @@ class Manager
 					$mCallBackResult
 				);
 
+				//如果callback有return的话，直接就break；
 				if ($mCallBackResult) 
 				{
 					$bResult = $mCallBackResult;
@@ -510,6 +514,7 @@ class Manager
 	
 	
 	/**
+     * 从post data中获取Module这个字段的值
 	 * @return \Aurora\System\Module\AbstractModule
 	 */
 	public function GetModuleFromRequest()
@@ -524,7 +529,8 @@ class Manager
 	}
 	
 	/**
-	 * 
+	 * 如果post data提交的Module有没有$sEntryName这个Entry（在每个Module的initialize()方法中初始化）
+     * 有的话返回这个Module，否则将这个Module返回
 	 * @param string $sEntryName
 	 * @return array
 	 */

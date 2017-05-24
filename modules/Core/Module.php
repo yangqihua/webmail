@@ -88,18 +88,19 @@ class Module extends \Aurora\System\Module\AbstractModule
 		
 		return $mResult;
 	}
-	
-	/**
-	 * Is called by CreateAccount event. Finds or creates and returns User for new account.
-	 * 
-	 * @ignore
-	 * @param array $Args {
-	 *		*int* **UserId** Identifier of existing user.
-	 *		*int* **TenantId** Identifier of tenant for creating new user in it.
-	 *		*int* **$PublicId** New user name.
-	 * }
-	 * @param \CUser $oResult
-	 */
+
+    /**
+     * Is called by CreateAccount event. Finds or creates and returns User for new account.
+     *
+     * @ignore
+     * @param array $Args {
+     *        *int* **UserId** Identifier of existing user.
+     *        *int* **TenantId** Identifier of tenant for creating new user in it.
+     *        *int* **$PublicId** New user name.
+     * }
+     * @param $Result
+     * @internal param \CUser $oResult
+     */
 	public function onCreateAccount(&$Args, &$Result)
 	{
 		$oUser = null;
@@ -617,13 +618,14 @@ class Module extends \Aurora\System\Module\AbstractModule
 
 		return true;
 	}
-	
-	/**
-	 * Updates user by object.
-	 * 
-	 * @param \CUser $oUser
-	 * returns bool
-	 */
+
+    /**
+     * Updates user by object.
+     *
+     * @param \CUser $oUser
+     * returns bool
+     * @return mixed
+     */
 	public function UpdateUserObject($oUser)
 	{
 		\Aurora\System\Api::checkUserRoleIsAtLeast(\EUserRole::NormalUser);

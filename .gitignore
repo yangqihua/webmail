@@ -9,3 +9,6 @@
 .htaccess
 robots.txt
 modules.json
+
+.DS_Store
+modules/.DS_Store

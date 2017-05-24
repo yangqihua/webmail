@@ -13,10 +13,6 @@
 		"afterlogic/aurora-module-webclient-core": "0.4.x",
 		"afterlogic/aurora-module-dropbox": "0.4.x",
 		"afterlogic/aurora-module-webclient-dropbox-auth": "0.4.x",
-		"afterlogic/aurora-module-facebook": "0.4.x",
-		"afterlogic/aurora-module-webclient-facebook-auth": "0.4.x",
-		"afterlogic/aurora-module-google": "0.4.x",
-		"afterlogic/aurora-module-webclient-google-auth": "0.4.x",
 		"afterlogic/aurora-module-webclient-oauth-integrator": "0.4.x",
 
 		"afterlogic/aurora-module-mail": "0.4.x",

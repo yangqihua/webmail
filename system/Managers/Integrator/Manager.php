@@ -1303,13 +1303,14 @@ class Manager extends \Aurora\System\Managers\AbstractManager
 		
 		return $sS;
 	}
-	
-	/**
-	 * Returns css links for building in html.
-	 * 
-	 * @param string $sModuleHash
-	 * @return string
-	 */
+
+    /**
+     * Returns css links for building in html.
+     *
+     * @param array $aConfig
+     * @return string
+     * @internal param string $sModuleHash
+     */
 //	public function getJsLinks($sModuleHash)
 	public function getJsLinks($aConfig = array())
 	{
